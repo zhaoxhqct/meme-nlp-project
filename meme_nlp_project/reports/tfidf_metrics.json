@@ -1,0 +1,85 @@
+{
+  "model": "tfidf_lexicon",
+  "train_size": 492,
+  "test_size": 105,
+  "meme_recognition": {
+    "accuracy": 0.981,
+    "macro_f1": 0.9756,
+    "per_class": {
+      "no": {
+        "precision": 0.9310344827586207,
+        "recall": 1.0,
+        "f1-score": 0.9642857142857143,
+        "support": 27.0
+      },
+      "yes": {
+        "precision": 1.0,
+        "recall": 0.9743589743589743,
+        "f1-score": 0.987012987012987,
+        "support": 78.0
+      },
+      "accuracy": 0.9809523809523809,
+      "macro avg": {
+        "precision": 0.9655172413793103,
+        "recall": 0.9871794871794872,
+        "f1-score": 0.9756493506493507,
+        "support": 105.0
+      },
+      "weighted avg": {
+        "precision": 0.9822660098522168,
+        "recall": 0.9809523809523809,
+        "f1-score": 0.9811688311688312,
+        "support": 105.0
+      }
+    }
+  },
+  "sentiment": {
+    "accuracy": 0.4744,
+    "macro_f1": 0.4406,
+    "per_class": {
+      "中性": {
+        "precision": 0.3888888888888889,
+        "recall": 0.56,
+        "f1-score": 0.45901639344262296,
+        "support": 25.0
+      },
+      "正向": {
+        "precision": 0.5757575757575758,
+        "recall": 0.5135135135135135,
+        "f1-score": 0.5428571428571428,
+        "support": 37.0
+      },
+      "负向": {
+        "precision": 0.4444444444444444,
+        "recall": 0.25,
+        "f1-score": 0.32,
+        "support": 16.0
+      },
+      "accuracy": 0.47435897435897434,
+      "macro avg": {
+        "precision": 0.4696969696969697,
+        "recall": 0.4411711711711712,
+        "f1-score": 0.44062451209992193,
+        "support": 78.0
+      },
+      "weighted avg": {
+        "precision": 0.488927738927739,
+        "recall": 0.47435897435897434,
+        "f1-score": 0.47027082207410076,
+        "support": 78.0
+      }
+    }
+  },
+  "label_distribution": {
+    "has_meme": {
+      "yes": 366,
+      "no": 126
+    },
+    "sentiment": {
+      "正向": 127,
+      "中性": 129,
+      "负向": 110
+    }
+  },
+  "output_dir": "models\\tfidf"
+}

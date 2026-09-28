@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>中文网络热梗分析</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="masthead">
+      <div>
+        <p class="eyebrow">NLP COURSE PROJECT</p>
+        <h1>中文网络热梗分析</h1>
+      </div>
+      <span class="model-badge">RoBERTa + 词典证据</span>
+    </header>
+
+    <section class="workspace" aria-label="热梗分析工具">
+      <form id="analyze-form" class="input-panel">
+        <label for="text-input">输入中文文本</label>
+        <textarea
+          id="text-input"
+          name="text"
+          maxlength="300"
+          rows="8"
+          placeholder="例如：这部电影yyds，但我有点emo。"
+          required
+        ></textarea>
+        <div class="input-footer">
+          <span id="char-count">0 / 300</span>
+          <button id="analyze-button" type="submit">开始分析</button>
+        </div>
+      </form>
+
+      <section class="result-panel" aria-live="polite">
+        <div id="empty-state" class="empty-state">
+          <span class="empty-mark">梗</span>
+          <p>分析结果会显示在这里</p>
+        </div>
+
+        <div id="loading-state" class="loading-state" hidden>
+          <span class="spinner" aria-hidden="true"></span>
+          <p>模型正在分析，请稍候</p>
+        </div>
+
+        <div id="error-state" class="error-state" hidden>
+          <strong>分析没有完成</strong>
+          <p id="error-message"></p>
+        </div>
+
+        <div id="result-content" hidden>
+          <div class="verdict-row">
+            <div>
+              <p class="result-label">热梗识别</p>
+              <p id="meme-verdict" class="verdict"></p>
+              <p id="decision-reason" class="decision-reason"></p>
+            </div>
+            <div>
+              <p class="result-label">情绪判断</p>
+              <span id="sentiment-badge" class="sentiment-badge"></span>
+            </div>
+          </div>
+
+          <div class="sentence-block">
+            <p class="result-label">分析文本</p>
+            <p id="highlighted-text" class="highlighted-text"></p>
+          </div>
+
+          <div class="matches-block">
+            <p class="result-label">词典命中</p>
+            <div id="match-list" class="match-list"></div>
+          </div>
+
+          <div id="dictionary-editor" class="dictionary-editor" hidden>
+            <p class="result-label">收录新梗</p>
+            <form id="dictionary-form" class="dictionary-form">
+              <label>
+                词条
+                <input id="entry-meme" name="meme" maxlength="40" required>
+              </label>
+              <label>
+                类别
+                <select id="entry-category" name="category" required>
+                  <option value="游戏类">游戏类</option>
+                  <option value="缩写类">缩写类</option>
+                  <option value="谐音类">谐音类</option>
+                  <option value="情绪状态类">情绪状态类</option>
+                  <option value="弹幕文化类">弹幕文化类</option>
+                  <option value="饭圈娱乐类">饭圈娱乐类</option>
+                  <option value="生活态度类">生活态度类</option>
+                  <option value="社会现象类">社会现象类</option>
+                  <option value="二次元类">二次元类</option>
+                  <option value="影视梗类">影视梗类</option>
+                  <option value="其他">其他</option>
+                </select>
+              </label>
+              <label class="dictionary-meaning">
+                释义
+                <input
+                  id="entry-meaning"
+                  name="meaning"
+                  maxlength="100"
+                  placeholder="填写简明含义"
+                  required
+                >
+              </label>
+              <button id="dictionary-button" type="submit">加入词典</button>
+              <p id="dictionary-feedback" class="dictionary-feedback"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>

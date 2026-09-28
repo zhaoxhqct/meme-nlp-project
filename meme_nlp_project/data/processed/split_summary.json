@@ -1,0 +1,66 @@
+{
+  "total": 702,
+  "splits": {
+    "train": {
+      "records": 492,
+      "split_groups": 337,
+      "hot_meme": 366,
+      "normal": 126,
+      "sentiment": {
+        "正向": 173,
+        "中性": 198,
+        "负向": 121
+      }
+    },
+    "dev": {
+      "records": 105,
+      "split_groups": 104,
+      "hot_meme": 78,
+      "normal": 27,
+      "sentiment": {
+        "中性": 50,
+        "负向": 22,
+        "正向": 33
+      }
+    },
+    "test": {
+      "records": 105,
+      "split_groups": 102,
+      "hot_meme": 78,
+      "normal": 27,
+      "sentiment": {
+        "正向": 39,
+        "中性": 49,
+        "负向": 17
+      }
+    }
+  },
+  "sentiment": {
+    "中性": 297,
+    "正向": 245,
+    "负向": 160
+  },
+  "sources": {
+    "hot_meme": 522,
+    "normal": 180
+  },
+  "has_meme": {
+    "yes": 522,
+    "no": 180
+  },
+  "meme_form": {
+    "variant": 8,
+    "literal": 514,
+    "none": 180
+  },
+  "seed": 2212,
+  "raw_encodings": {
+    "hot_meme_dataset.csv": "gb18030",
+    "expansion/hot_meme_dataset.csv": "utf-8-sig",
+    "normal_negative_samples.csv": "gb18030",
+    "expansion/normal_samples.csv": "utf-8-sig",
+    "meme_dictionary.csv": "gb18030",
+    "expansion/meme_dictionary.csv": "utf-8-sig",
+    "dictionary_overrides.csv": "utf-8-sig"
+  }
+}

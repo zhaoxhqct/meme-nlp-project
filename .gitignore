@@ -1,0 +1,16 @@
+.venv/
+.hf_cache/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Large pretrained and fine-tuned model directories stay local.
+meme_nlp_project/models/roberta/
+meme_nlp_project/models/roberta_base/
+meme_nlp_project/models/roberta_412_backup/
+meme_nlp_project/models/roberta_612_before_sentiment_fix/
+*.safetensors
+*.bin
+
+.DS_Store
+Thumbs.db
